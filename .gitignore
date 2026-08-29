@@ -1,0 +1,29 @@
+# Rust
+/target
+**/target
+Cargo.lock.bak
+
+# Node
+node_modules/
+dist/
+*.local
+
+# Tauri generated
+apps/desktop/src-tauri/gen/
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.*
+
+# Local test-run evidence (never published)
+audit_*.txt
+ping_router_*.txt
+installer/
+*.log

@@ -1,0 +1,35 @@
+[package]
+name = "banden-app"
+description = "BanDen desktop application (Tauri)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+default-run = "banden-app"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+banden-core.workspace = true
+banden-db.workspace = true
+banden-net.workspace = true
+async-trait.workspace = true
+tauri = { version = "2", features = ["tray-icon"] }
+tauri-plugin-autostart = "2"
+tauri-plugin-global-shortcut = "2"
+tokio.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+chrono.workspace = true
+uuid.workspace = true
+thiserror.workspace = true
+
+[features]
+default = []
+# Embeds the frontend assets so a plain `cargo build --release` produces a
+# standalone exe (without it, release builds still load the dev server).
+custom-protocol = ["tauri/custom-protocol"]

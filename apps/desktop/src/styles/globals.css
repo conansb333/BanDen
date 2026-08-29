@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 224 12% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 12% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 12% 12%;
+    --primary: 221 45% 38%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 14% 95%;
+    --secondary-foreground: 224 12% 16%;
+    --muted: 220 14% 95%;
+    --muted-foreground: 220 9% 44%;
+    --accent: 220 14% 93%;
+    --accent-foreground: 224 12% 16%;
+    --destructive: 0 68% 46%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 150 55% 34%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 42%;
+    --warning-foreground: 0 0% 100%;
+    --border: 220 13% 89%;
+    --input: 220 13% 85%;
+    --ring: 221 45% 38%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 14% 8%;
+    --foreground: 218 20% 92%;
+    --card: 224 13% 11%;
+    --card-foreground: 218 20% 92%;
+    --popover: 224 14% 10%;
+    --popover-foreground: 218 20% 92%;
+    --primary: 217 42% 58%;
+    --primary-foreground: 224 14% 8%;
+    --secondary: 224 11% 16%;
+    --secondary-foreground: 218 20% 92%;
+    --muted: 224 11% 16%;
+    --muted-foreground: 219 11% 60%;
+    --accent: 224 11% 20%;
+    --accent-foreground: 218 20% 92%;
+    --destructive: 0 62% 52%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 150 45% 44%;
+    --success-foreground: 224 14% 8%;
+    --warning: 38 85% 52%;
+    --warning-foreground: 224 14% 8%;
+    --border: 224 11% 19%;
+    --input: 224 11% 24%;
+    --ring: 217 42% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "tnum";
+  }
+}
+
+/* Dense, technical data tables */
+@layer components {
+  .data-table {
+    @apply w-full text-sm;
+  }
+  .data-table th {
+    @apply h-9 px-3 text-left align-middle font-medium text-muted-foreground;
+  }
+  .data-table td {
+    @apply h-10 px-3 align-middle;
+  }
+}

@@ -1,0 +1,49 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/banden-core",
+    "crates/banden-db",
+    "crates/banden-net",
+    "crates/banden-watchdog",
+    "apps/desktop/src-tauri",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+repository = "https://github.com/banden-app/banden"
+rust-version = "1.80"
+authors = ["BanDen contributors"]
+
+[workspace.dependencies]
+banden-core = { path = "crates/banden-core" }
+banden-db = { path = "crates/banden-db" }
+banden-net = { path = "crates/banden-net" }
+
+anyhow = "1"
+async-trait = "0.1"
+chrono = { version = "0.4", features = ["serde"] }
+thiserror = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "sync", "time"] }
+tokio-util = "0.7"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+uuid = { version = "1", features = ["v4", "serde"] }
+rusqlite = { version = "0.32", features = ["bundled"] }
+netdev = "0.30"
+sysinfo = "0.32"
+windows = { version = "0.58", features = [
+    "Win32_Foundation",
+    "Win32_NetworkManagement_IpHelper",
+    "Win32_NetworkManagement_Ndis",
+    "Win32_Networking_WinSock",
+    "Win32_System_Threading",
+] }
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true
